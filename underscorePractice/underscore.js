@@ -74,12 +74,18 @@ var customers = [
 // Create an array of all email addresses
 // first without using underscore's pluck method, then with it.
 
+// var arr = customers.map(email => customers['email'])
+// console.log(arr)
+
+console.log(_.map(customers, 'email'))
+
 var inviteList1 = ["Ed", "Fanny", "Mildred", "Alice", "James"];
 var inviteList2 = ["Jake", "Mildred", "Jimmy", "Ed", "Franklin"];
 
 // Uh oh! We are having a party and two invite lists were created.
 // Create a duplicate-free list of the people we want at the party without underscore's ._union().
 // Then create another list that removes all duplicates using _.union().
+console.log(_.union(inviteList1, inviteList2))
 
 var friendsOfJim = [
   "Tom",
@@ -106,6 +112,10 @@ var friendsOfBetty = [
 // Jim and Betty are having a party, but they only want to invite mutual friends.
 // Create an array of mutual friends. First without using underscore.
 // Then using underscores _.intersection().
+
+// not working
+// console.log(_(friendsOfBetty, friendsOfJim).intersection())
+console.log(_.intersection(friendsOfBetty, friendsOfJim))
 
 var purchases = [
   {
@@ -142,5 +152,9 @@ var purchases = [
   }
 ];
 
+
+
 // First, group the purchases by company without underscore
 // then do it again using _.groupBy()
+
+console.log(_.groupBy(purchases, 'company'))
